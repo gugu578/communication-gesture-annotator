@@ -1,0 +1,517 @@
+{
+  "schema_version": 1,
+  "release_version": "0.2.5",
+  "evaluated_on": "2026-10-25",
+  "scope": "filtered final LLM-only detection on five development recordings",
+  "model_calls_for_recomputation": 0,
+  "prompt_version": "target-g-unit-phrase-membership-v0.13",
+  "default_phase2_prompt_sha256": "cfb57a0c8ba3123207f0e7cf30170f4ee0e74ff4c341a3c6e3caca1eed058eaf",
+  "model_deployment_label": "Qwen 36-27b",
+  "api": "Open WebUI",
+  "analysis_interval_us": 100000,
+  "phase1_enabled": true,
+  "phase2": {
+    "target_frames": 3,
+    "history_frames": 47,
+    "future_frames": 10,
+    "score_source": "llm"
+  },
+  "reference": {
+    "g_unit_tier": "Manual_GUnit",
+    "g_unit_value": "G-unit",
+    "visibility_tier": "Spker_vis",
+    "alignment_offset_us": 0
+  },
+  "detection_filter": {
+    "tier": "Spker_vis",
+    "values": [
+      "Half Body Shot",
+      "Full Body Shot",
+      "Close Shot",
+      "3/4 Body shot",
+      "Full Body shot",
+      "Half Body shot",
+      "Full shot",
+      "Mid shot"
+    ],
+    "matching": "exact-case-sensitive",
+    "sha256": "ee46eec5ef71466b2b0a16d0dddb31a26665296011d3175648bc811194b80fcf"
+  },
+  "grouping": {
+    "candidate_policy": "contextual-score-candidates-v0.3",
+    "finalization_policy": "probability-finalization-v0.4",
+    "rest_threshold": 0.5,
+    "rest_seed_threshold": 0.65,
+    "minimum_departure_us": 300000,
+    "minimum_separating_rest_us": 300000,
+    "maximum_bridged_missing_samples": 1,
+    "merge_gap_ms": 300
+  },
+  "regenerated_filtered_report_sha256": "75320d024089160ca2a35c86c8c88849b6cfe9ff10c7ac078e5ae20387f5ad8e",
+  "pooled": {
+    "tp": 9126,
+    "fn": 218,
+    "fp": 1437,
+    "tn": 705,
+    "n": 11486,
+    "precision": 0.863959102527691,
+    "recall": 0.9766695205479452,
+    "f1": 0.9168634148791882,
+    "accuracy": 0.855911544488943,
+    "balanced_accuracy": 0.6529005866045048,
+    "fpr": 0.6708683473389355
+  },
+  "per_video": {
+    "experiment-001": {
+      "recording_id": "M3D_TED_AS2010",
+      "metrics": {
+        "tp": 1099,
+        "fn": 28,
+        "fp": 281,
+        "tn": 305,
+        "n": 1713,
+        "precision": 0.7963768115942029,
+        "recall": 0.9751552795031055,
+        "f1": 0.8767451136816913,
+        "accuracy": 0.819614711033275,
+        "balanced_accuracy": 0.7478165476013822,
+        "fpr": 0.47952218430034127
+      },
+      "source_sha256": "fc4e6fb1eb2249370f70491aa7ac929e9595e64cb5caf3ee96ecab87f5f42cce",
+      "reference_sha256": "7012bd8bcd1c3e0564f899e6c652300e1bf27aa68082f344a84678f5385f5979",
+      "analysis_sha256": "6ebf3be23c2629a0d809080013c6b1bb0fe1a9122b775d655eb64d3e0e6661dc",
+      "saved_configuration_sha256": "111cfe5f502fbeea9ae96f213f3547584e9a66c5bbffd23dbc36c52cba7cd7de",
+      "saved_prompt_versions": [
+        "target-g-unit-phrase-membership-v0.13"
+      ],
+      "g_unit_count": 31,
+      "projected_output_sha256": "9a8c69bd76f97c14af05870d2e7f2ae482849b59ffe8dda5552f65e6f8e1cce9",
+      "changed_from_saved_membership_count": 2
+    },
+    "experiment-002": {
+      "recording_id": "M3D_TED_EG2009",
+      "metrics": {
+        "tp": 2467,
+        "fn": 20,
+        "fp": 236,
+        "tn": 34,
+        "n": 2757,
+        "precision": 0.9126896041435442,
+        "recall": 0.9919581825492562,
+        "f1": 0.950674373795761,
+        "accuracy": 0.907145447950671,
+        "balanced_accuracy": 0.5589420542375909,
+        "fpr": 0.8740740740740741
+      },
+      "source_sha256": "fb1cc5ab91420b1ad75ee18e8afb6d16af0647d32021ec7259222a6579c49c4b",
+      "reference_sha256": "23c536a401c1e85678713842020b07c2444bded6120856751e4d3a38d9fe7bfa",
+      "analysis_sha256": "26b0fdbf5a8d35066036d8deedfad7ef29bf82362973836dee1ec613204c9dea",
+      "saved_configuration_sha256": "111cfe5f502fbeea9ae96f213f3547584e9a66c5bbffd23dbc36c52cba7cd7de",
+      "saved_prompt_versions": [
+        "target-g-unit-phrase-membership-v0.13"
+      ],
+      "g_unit_count": 93,
+      "projected_output_sha256": "6d60fe42eabfebb51d25446e616cf31e285089a0ce3b5ed98510bebd6c27dd15",
+      "changed_from_saved_membership_count": 0
+    },
+    "experiment-003": {
+      "recording_id": "M3D_TED_ES2016",
+      "metrics": {
+        "tp": 2682,
+        "fn": 55,
+        "fp": 652,
+        "tn": 137,
+        "n": 3526,
+        "precision": 0.8044391121775645,
+        "recall": 0.979905005480453,
+        "f1": 0.8835447208038214,
+        "accuracy": 0.7994895065229722,
+        "balanced_accuracy": 0.576771260661646,
+        "fpr": 0.826362484157161
+      },
+      "source_sha256": "cb236b425fae3d135b76b25279cc9816bd655b5a34546a29b2883c04a264b0fd",
+      "reference_sha256": "3e810402db60af36197d17a052360ebd0e1767dac8ce980219c374d53fd30d85",
+      "analysis_sha256": "95c502e271933f00f05fecee6d83e08db35667ada118ad3807400c66a055b6a1",
+      "saved_configuration_sha256": "111cfe5f502fbeea9ae96f213f3547584e9a66c5bbffd23dbc36c52cba7cd7de",
+      "saved_prompt_versions": [
+        "target-g-unit-phrase-membership-v0.13"
+      ],
+      "g_unit_count": 36,
+      "projected_output_sha256": "12457a4d8618bcd0ea87e685eef368178f8ce0a0ff80100eb26b9e298263a240",
+      "changed_from_saved_membership_count": 3
+    },
+    "experiment-004": {
+      "recording_id": "M3D_TED_MS2010",
+      "metrics": {
+        "tp": 1027,
+        "fn": 72,
+        "fp": 132,
+        "tn": 113,
+        "n": 1344,
+        "precision": 0.8861087144089732,
+        "recall": 0.9344858962693358,
+        "f1": 0.9096545615589017,
+        "accuracy": 0.8482142857142857,
+        "balanced_accuracy": 0.697855193032627,
+        "fpr": 0.5387755102040817
+      },
+      "source_sha256": "83845e7430912b5685262a8bc05ec65b1b89b070ec0672c6332e1fadf0e1e85d",
+      "reference_sha256": "8758a494eac03793a96dd5e1229961672d35fc3259d59d9c88082b1c60e7622a",
+      "analysis_sha256": "93fb4688f00ef7208361164ba78b8ec8fec154ccc710d2d1c6f0844818cb033d",
+      "saved_configuration_sha256": "111cfe5f502fbeea9ae96f213f3547584e9a66c5bbffd23dbc36c52cba7cd7de",
+      "saved_prompt_versions": [
+        "target-g-unit-phrase-membership-v0.13"
+      ],
+      "g_unit_count": 27,
+      "projected_output_sha256": "fa6a345cc83c286c3b66926ed3a814f8f40f299243ed52685d41abd4d2ceba17",
+      "changed_from_saved_membership_count": 2
+    },
+    "experiment-005": {
+      "recording_id": "M3D_TED_SJ2010",
+      "metrics": {
+        "tp": 1851,
+        "fn": 43,
+        "fp": 136,
+        "tn": 116,
+        "n": 2146,
+        "precision": 0.9315551082033215,
+        "recall": 0.9772967265047519,
+        "f1": 0.953877866529245,
+        "accuracy": 0.9165890027958994,
+        "balanced_accuracy": 0.7188070934111062,
+        "fpr": 0.5396825396825397
+      },
+      "source_sha256": "6549fa10b796160aab266091ef901dab9037baef95d3a487cf0b7311480f0c68",
+      "reference_sha256": "3559525ad196af821743ad4d5620652af8b14ac99c45d59a12f799107f1670d5",
+      "analysis_sha256": "957b8d74f86675053b4924d1d0671551df5ea011c03473b70f9464e4cd54b9ae",
+      "saved_configuration_sha256": "111cfe5f502fbeea9ae96f213f3547584e9a66c5bbffd23dbc36c52cba7cd7de",
+      "saved_prompt_versions": [
+        "target-g-unit-phrase-membership-v0.13"
+      ],
+      "g_unit_count": 90,
+      "projected_output_sha256": "e5d20f5f86d032a69af89ad9ad9022c47a702cd39117e859364d6276df860d12",
+      "changed_from_saved_membership_count": 9
+    }
+  },
+  "macro": {
+    "balanced_accuracy": 0.6600384297888704,
+    "f1": 0.914899327273884
+  },
+  "bootstrap": {
+    "method": "paired_circular_block_bootstrap_with_exclusion_mask_stratified_by_video",
+    "policy_version": "masked-paired-circular-block-bootstrap-v2",
+    "replicates": 5000,
+    "base_seed": 1729,
+    "seed_derivation": "first eight SHA256 bytes of 1729|all-selected-recordings|SECONDS, unsigned big-endian",
+    "primary_block_seconds": 10.0,
+    "sensitivity_block_seconds": [
+      5,
+      20
+    ],
+    "confidence_interval": "basic_equal_tailed_95_percent_pointwise_not_multiplicity_adjusted",
+    "p_value_method": "centered_bootstrap_equal_tail_two_sided_with_plus_one_correction_approximate",
+    "inference_scope": "conditional_on_observed_recordings_and_selection_policy_not_new_videos",
+    "multiplicity": {
+      "family": "Primary all-recordings comparisons: two metrics, two baselines and all block lengths",
+      "method": "Holm",
+      "test_count": 12
+    },
+    "blocks": {
+      "10": {
+        "comparisons": {
+          "all_g_unit": {
+            "accuracy": {
+              "available": true,
+              "conclusion": "significantly_higher",
+              "confidence_interval_95": [
+                0.024869667473460692,
+                0.058849969408739614
+              ],
+              "invalid_replicates": 0,
+              "observed_difference": 0.042399442799930354,
+              "p_value_holm": 0.004799040191961607,
+              "p_value_resolution_floor": 0.0003999200159968006,
+              "p_value_two_sided": 0.0003999200159968006,
+              "significant": true,
+              "standard_error": 0.008722162624150712,
+              "valid_replicates": 5000
+            },
+            "balanced_accuracy": {
+              "available": true,
+              "conclusion": "significantly_higher",
+              "confidence_interval_95": [
+                0.11515705496482989,
+                0.1892526303332685
+              ],
+              "invalid_replicates": 0,
+              "observed_difference": 0.15290058660450478,
+              "p_value_holm": 0.004799040191961607,
+              "p_value_resolution_floor": 0.0003999200159968006,
+              "p_value_two_sided": 0.0003999200159968006,
+              "significant": true,
+              "standard_error": 0.019016687508230504,
+              "valid_replicates": 5000
+            }
+          },
+          "random_assignment": {
+            "accuracy": {
+              "available": true,
+              "conclusion": "significantly_higher",
+              "confidence_interval_95": [
+                0.3298797439983192,
+                0.3841019219562008
+              ],
+              "invalid_replicates": 0,
+              "observed_difference": 0.355911544488943,
+              "p_value_holm": 0.004799040191961607,
+              "p_value_resolution_floor": 0.0003999200159968006,
+              "p_value_two_sided": 0.0003999200159968006,
+              "significant": true,
+              "standard_error": 0.013962644735611061,
+              "valid_replicates": 5000
+            },
+            "balanced_accuracy": {
+              "available": true,
+              "conclusion": "significantly_higher",
+              "confidence_interval_95": [
+                0.11515705496482989,
+                0.1892526303332685
+              ],
+              "invalid_replicates": 0,
+              "observed_difference": 0.15290058660450478,
+              "p_value_holm": 0.004799040191961607,
+              "p_value_resolution_floor": 0.0003999200159968006,
+              "p_value_two_sided": 0.0003999200159968006,
+              "significant": true,
+              "standard_error": 0.019016687508230504,
+              "valid_replicates": 5000
+            }
+          }
+        },
+        "sampling": {
+          "block_samples": 100,
+          "block_seconds": 10.0,
+          "derived_seed": 5816517071794063408,
+          "evaluated_sample_count": 11486,
+          "fixed_short_timeline_samples": 0,
+          "masked_grid_sample_count": 13133,
+          "replicate_eligible_count_max": 13544,
+          "replicate_eligible_count_min": 9442,
+          "resampled_block_equivalents": 114.86,
+          "resampled_eligible_samples": 11486,
+          "timeline_grid_sample_count": 24619
+        }
+      },
+      "20": {
+        "comparisons": {
+          "all_g_unit": {
+            "accuracy": {
+              "available": true,
+              "conclusion": "significantly_higher",
+              "confidence_interval_95": [
+                0.02403926786924402,
+                0.05870512196381443
+              ],
+              "invalid_replicates": 0,
+              "observed_difference": 0.042399442799930354,
+              "p_value_holm": 0.004799040191961607,
+              "p_value_resolution_floor": 0.0003999200159968006,
+              "p_value_two_sided": 0.0003999200159968006,
+              "significant": true,
+              "standard_error": 0.008683866032187262,
+              "valid_replicates": 5000
+            },
+            "balanced_accuracy": {
+              "available": true,
+              "conclusion": "significantly_higher",
+              "confidence_interval_95": [
+                0.11369365458071051,
+                0.18952583160116535
+              ],
+              "invalid_replicates": 0,
+              "observed_difference": 0.15290058660450478,
+              "p_value_holm": 0.004799040191961607,
+              "p_value_resolution_floor": 0.0003999200159968006,
+              "p_value_two_sided": 0.0003999200159968006,
+              "significant": true,
+              "standard_error": 0.01930657579345051,
+              "valid_replicates": 5000
+            }
+          },
+          "random_assignment": {
+            "accuracy": {
+              "available": true,
+              "conclusion": "significantly_higher",
+              "confidence_interval_95": [
+                0.32723948138098213,
+                0.38780583348732933
+              ],
+              "invalid_replicates": 0,
+              "observed_difference": 0.355911544488943,
+              "p_value_holm": 0.004799040191961607,
+              "p_value_resolution_floor": 0.0003999200159968006,
+              "p_value_two_sided": 0.0003999200159968006,
+              "significant": true,
+              "standard_error": 0.015494424551238417,
+              "valid_replicates": 5000
+            },
+            "balanced_accuracy": {
+              "available": true,
+              "conclusion": "significantly_higher",
+              "confidence_interval_95": [
+                0.11369365458071051,
+                0.18952583160116535
+              ],
+              "invalid_replicates": 0,
+              "observed_difference": 0.15290058660450478,
+              "p_value_holm": 0.004799040191961607,
+              "p_value_resolution_floor": 0.0003999200159968006,
+              "p_value_two_sided": 0.0003999200159968006,
+              "significant": true,
+              "standard_error": 0.01930657579345051,
+              "valid_replicates": 5000
+            }
+          }
+        },
+        "sampling": {
+          "block_samples": 200,
+          "block_seconds": 20.0,
+          "derived_seed": 9936635458664309859,
+          "evaluated_sample_count": 11486,
+          "fixed_short_timeline_samples": 0,
+          "masked_grid_sample_count": 13133,
+          "replicate_eligible_count_max": 13680,
+          "replicate_eligible_count_min": 9296,
+          "resampled_block_equivalents": 57.43,
+          "resampled_eligible_samples": 11486,
+          "timeline_grid_sample_count": 24619
+        }
+      },
+      "5": {
+        "comparisons": {
+          "all_g_unit": {
+            "accuracy": {
+              "available": true,
+              "conclusion": "significantly_higher",
+              "confidence_interval_95": [
+                0.025580553131878007,
+                0.05797025253007196
+              ],
+              "invalid_replicates": 0,
+              "observed_difference": 0.042399442799930354,
+              "p_value_holm": 0.004799040191961607,
+              "p_value_resolution_floor": 0.0003999200159968006,
+              "p_value_two_sided": 0.0003999200159968006,
+              "significant": true,
+              "standard_error": 0.008312296380824003,
+              "valid_replicates": 5000
+            },
+            "balanced_accuracy": {
+              "available": true,
+              "conclusion": "significantly_higher",
+              "confidence_interval_95": [
+                0.11656592246035855,
+                0.18864666242692138
+              ],
+              "invalid_replicates": 0,
+              "observed_difference": 0.15290058660450478,
+              "p_value_holm": 0.004799040191961607,
+              "p_value_resolution_floor": 0.0003999200159968006,
+              "p_value_two_sided": 0.0003999200159968006,
+              "significant": true,
+              "standard_error": 0.01807359913652101,
+              "valid_replicates": 5000
+            }
+          },
+          "random_assignment": {
+            "accuracy": {
+              "available": true,
+              "conclusion": "significantly_higher",
+              "confidence_interval_95": [
+                0.3328224120618695,
+                0.3808732931881593
+              ],
+              "invalid_replicates": 0,
+              "observed_difference": 0.355911544488943,
+              "p_value_holm": 0.004799040191961607,
+              "p_value_resolution_floor": 0.0003999200159968006,
+              "p_value_two_sided": 0.0003999200159968006,
+              "significant": true,
+              "standard_error": 0.012292018577704662,
+              "valid_replicates": 5000
+            },
+            "balanced_accuracy": {
+              "available": true,
+              "conclusion": "significantly_higher",
+              "confidence_interval_95": [
+                0.11656592246035855,
+                0.18864666242692138
+              ],
+              "invalid_replicates": 0,
+              "observed_difference": 0.15290058660450478,
+              "p_value_holm": 0.004799040191961607,
+              "p_value_resolution_floor": 0.0003999200159968006,
+              "p_value_two_sided": 0.0003999200159968006,
+              "significant": true,
+              "standard_error": 0.01807359913652101,
+              "valid_replicates": 5000
+            }
+          }
+        },
+        "sampling": {
+          "block_samples": 50,
+          "block_seconds": 5.0,
+          "derived_seed": 17688220630968453872,
+          "evaluated_sample_count": 11486,
+          "fixed_short_timeline_samples": 0,
+          "masked_grid_sample_count": 13133,
+          "replicate_eligible_count_max": 13105,
+          "replicate_eligible_count_min": 9661,
+          "resampled_block_equivalents": 229.72,
+          "resampled_eligible_samples": 11486,
+          "timeline_grid_sample_count": 24619
+        }
+      }
+    }
+  },
+  "analysis_code_sha256": {
+    "scripts/evaluate_runs.py": "933be24673316080108b27165f784691d3456c31539ca8f730eb87071c2e8ecc",
+    "scripts/evaluation_runtime.py": "4cd9069af132352af0aa25e6faf6f0b89505bfed49b0e67a0af38e71b5148bbe",
+    "scripts/evaluation_input.py": "e530b0f0f96d6c5a740bcd3859d4688ed9b5e5b0f80ee4eeb280b518f19dbd0b",
+    "scripts/evaluation_filter.py": "eae998f9c996c27577fbe3f8f1e6376583953836d0bf0ad0a440a4897402b4e4",
+    "scripts/evaluation_bootstrap.py": "497e122674729e195eaeecb9eaddbe33d5aca60ea6051eb6dbc225b43f79349f",
+    "scripts/evaluation_baselines.py": "ae90af51289030c9b743762fd0fe9754b4a3404d94e04f13fa03116d66762ff9",
+    "public/src/communication_gesture_annotator/pipeline/llm_projection.py": "8709bba11ce8cca66a7e93a45670690e73a1035705c5cf40ced090f620174985",
+    "public/src/communication_gesture_annotator/pipeline/probability_finalization.py": "1a929b54bac9000cc0d107922ca2046e5aa17c936394e5c1b63c815de8ef188b",
+    "public/src/communication_gesture_annotator/pipeline/output_guards.py": "4b776a3ab1edfb286f9198855b05abfdad254c3aafb6e3f0e171c899ceab194f",
+    "public/src/communication_gesture_annotator/pipeline/score_candidates.py": "640c6c101ae609cbd31c8bac7c81b8fd4978d8a1aace47bafcd96158f4a22671"
+  },
+  "public_reproduction_limit": "The local batch script is not bundled. evaluate-run applies the same LLM grouping to one run without this report shot filter, aggregation or bootstrap.",
+  "output_tool_verification": {
+    "policy_version": "llm-only-output-projection-v2",
+    "model_calls": 0,
+    "all_five_counts_match_report": true,
+    "all_five_eaf_and_evaluation_hashes_match": true,
+    "projection_module_sha256": "8709bba11ce8cca66a7e93a45670690e73a1035705c5cf40ced090f620174985",
+    "output_sha256_by_recording": {
+      "experiment-001": "9a8c69bd76f97c14af05870d2e7f2ae482849b59ffe8dda5552f65e6f8e1cce9",
+      "experiment-002": "6d60fe42eabfebb51d25446e616cf31e285089a0ce3b5ed98510bebd6c27dd15",
+      "experiment-003": "12457a4d8618bcd0ea87e685eef368178f8ce0a0ff80100eb26b9e298263a240",
+      "experiment-004": "fa6a345cc83c286c3b66926ed3a814f8f40f299243ed52685d41abd4d2ceba17",
+      "experiment-005": "e5d20f5f86d032a69af89ad9ad9022c47a702cd39117e859364d6276df860d12"
+    },
+    "verified_for_release": "0.2.5",
+    "verified_on": "2026-10-25",
+    "all_five_outputs_unchanged": true,
+    "batch_output_hashes_match_previous_eaf_verification": true,
+    "batch_verified_on": "2026-10-25"
+  },
+  "analysis_code_path_note": "Current batch evaluation supplies the final LLM-only grouped decisions and pooled bootstrap directly; no separate score-rewriting analysis was used.",
+  "release_output_compatibility": {
+    "release": "0.2.5",
+    "method": "same inference and grouping code; regenerated current LLM-only grouped evaluation",
+    "new_model_calls": 0,
+    "new_end_to_end_evaluation": false
+  },
+  "batch_evaluation_policy": "batch-reference-evaluation-v9"
+}

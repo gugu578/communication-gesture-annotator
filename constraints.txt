@@ -1,0 +1,13 @@
+# Runtime versions used for the frozen release (Python 3.12 on Windows).
+# Install with: python -m pip install -c constraints.txt .
+# Model weights, FFmpeg and the remote VLM are separate dependencies.
+colorama==0.4.6
+flatbuffers==25.12.19
+numpy==2.5.2
+onnxruntime==1.29.0
+opencv-contrib-python==5.0.0.93
+opencv-python==5.0.0.93
+packaging==26.3
+protobuf==7.36.1
+rtmlib==0.0.16
+tqdm==4.70.0

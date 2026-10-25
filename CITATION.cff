@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite this software when using Communication Gesture Annotator. A publication link will be added when available."
+type: software
+title: "Communication Gesture Annotator"
+authors:
+  - family-names: "Hládek"
+    given-names: "Ľuboš"
+version: "0.2.5"
+license: Apache-2.0
+url: https://github.com/gugu578/communication-gesture-annotator
+repository-code: https://github.com/gugu578/communication-gesture-annotator
+# Add DOI and preferred-citation when publication details are available.

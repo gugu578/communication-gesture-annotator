@@ -1,0 +1,72 @@
+# Copy to config.toml and fill the two blank fields before running.
+# Keep credentials in the named environment variable, never in this file.
+# Requires an image-capable VLM through the Open WebUI API (tested with Qwen36-27b).
+
+[open_webui]
+base_url = ""
+model = ""
+api_key_env = "GESTURE_ANNOTATOR_OPEN_WEBUI_API_KEY"
+timeout_seconds = 900.0
+maximum_transient_http_retries = 3
+transient_http_retry_delays_seconds = [30.0, 60.0, 60.0]
+inter_request_cooldown_seconds = 0.5
+verify_tls = true
+allow_non_private_network = false
+
+[storage]
+mode = "minimal" # Default. "compact": more cached output; "debug": full diagnostics.
+
+[analysis]
+sample_rate_hz = 10 # The canonical annotation grid is fixed at 10 Hz.
+minimum_separating_rest_us = 300000
+maximum_bridged_missing_samples = 1
+maximum_proxy_width = 960
+eaf_tier_id = "G-Units"
+
+[inference]
+phase1_enabled = true
+visibility_max_frames = 5
+temperature = 0.1
+seed = 0
+think = false
+model_context_window_tokens = 131072
+maximum_output_tokens = 65536 # Task-specific output budgets are normally smaller.
+maximum_repair_attempts = 1
+profile_sample_period_us = 2000000
+profile_samples = 24
+profile_window_us = 240000000
+profile_overlap_us = 60000000
+maximum_images_per_request = 72
+frame_width = 640
+
+[pose_preprocessing]
+device = "cpu"
+# These defaults are downloaded by rtmlib on first use. Local paths are allowed.
+detector_model = "https://download.openmmlab.com/mmpose/v1/projects/rtmposev1/onnx_sdk/yolox_m_8xb8-300e_humanart-c2c7a14a.zip"
+pose_model = "https://huggingface.co/Soykaf/RTMW3D-x/resolve/main/onnx/rtmw3d-x_8xb64_cocktail14-384x288-b0a0eab7_20240626.onnx"
+keypoint_confidence_threshold = 0.40
+tracking_iou_threshold = 0.30
+maximum_track_gap_us = 200000
+
+[detection]
+probability_target_frames = 3
+probability_history_frames = 47
+probability_future_frames = 10
+probability_history_enabled = true
+probability_motion_trace_enabled = true
+# Use the LLM score directly by default; "motion_fusion" combines it with motion.
+probability_score_source = "llm"
+# Applies only to motion_fusion; zero selects motion, not LLM-only scoring.
+probability_context_strength = 4.0
+motion_transport_scale = 1.0
+motion_orientation_scale = 3.0
+motion_finger_scale = 1.0
+motion_articulation_scale = 5.0
+motion_hand_weight = 0.25
+motion_outlier_window_us = 1500000
+motion_outlier_z = 8.0
+motion_outlier_ratio = 6.0
+communication_rest_threshold = 0.5
+communication_rest_seed_threshold = 0.65
+communication_minimum_departure_us = 300000
+finalization_merge_gap_ms = 300 # Join final intervals across gaps <= this value; 0 disables.

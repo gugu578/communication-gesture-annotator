@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "communication-gesture-annotator"
+version = "0.2.5"
+description = "Video and pose based annotation of communicative hand activity"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{name = "Ľuboš Hládek"}]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "rtmlib>=0.0.14,<0.1",
+  "numpy>=1.26,<3",
+  "opencv-python>=4.8,<6",
+  "onnxruntime>=1.17,<2",
+]
+
+[project.scripts]
+gesture-annotator = "communication_gesture_annotator.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/communication_gesture_annotator"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/tests", "/configs/config.example.toml", "/docs", "/README.md", "/CITATION.cff", "/RELEASE.json", "/constraints.txt", "/LICENSE", "/pyproject.toml", "/.gitignore", "/.gitattributes"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"CITATION.cff" = "communication_gesture_annotator/CITATION.cff"
+"RELEASE.json" = "communication_gesture_annotator/RELEASE.json"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E9", "F"]
